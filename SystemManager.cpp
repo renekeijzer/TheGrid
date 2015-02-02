@@ -1,11 +1,9 @@
 #include "SystemManager.hpp"
 
 
-SystemManager::SystemManager()
-{
-}
-
-
-SystemManager::~SystemManager()
-{
+void SystemManager::configure() {
+	for (auto &pair : systems) {
+		pair.second->configure();
+	}
+	init = true;
 }

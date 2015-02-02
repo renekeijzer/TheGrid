@@ -66,20 +66,24 @@
   <ItemGroup>
     <ClCompile Include="BaseComponent.cpp" />
     <ClCompile Include="BasePool.cpp" />
+    <ClCompile Include="BaseSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
-    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="SystemManager.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseComponent.hpp" />
     <ClInclude Include="BasePool.hpp" />
+    <ClInclude Include="BaseSystem.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentHandle.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="EntityId.hpp" />
     <ClInclude Include="EntityManager.hpp" />
     <ClInclude Include="Pool.hpp" />
+    <ClInclude Include="System.hpp" />
+    <ClInclude Include="SystemManager.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
