@@ -22,7 +22,7 @@ struct Velocity : Component<Velocity>{
 
 struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, double dt){
-		std::cout << "movementsystem call \r\n";
+	
 	}
 };
 

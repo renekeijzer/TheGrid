@@ -2,7 +2,7 @@
 #include "EntityManager.hpp"
 #include "EntityId.hpp"
 #include "ComponentHandle.hpp"
-
+#include "ViewIterator.hpp"
 
 template <typename C>
 class ComponentHandle;
@@ -22,4 +22,3 @@ private:
 	EntityId id = INVALID;
 	EntityManager * entityManager;
 };
-
