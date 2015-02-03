@@ -2,9 +2,10 @@
 #include "EntityManager.hpp"
 #include "EntityId.hpp"
 #include "ComponentHandle.hpp"
-#include "ViewIterator.hpp"
-#ifndef ENTITY
-#define ENTITY
+
+
+typedef std::bitset<64> ComponentMask;
+
 template <typename C>
 class ComponentHandle;
 
@@ -23,4 +24,6 @@ private:
 	EntityId id = INVALID;
 	EntityManager * entityManager;
 };
-#endif
+
+#include "ViewIterator.hpp"
+#include "BaseView.hpp"

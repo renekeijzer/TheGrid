@@ -15,8 +15,6 @@
 typedef std::bitset<64> ComponentMask;
 class Entity;
 
-
-
 class EntityManager
 {
 public:
@@ -61,6 +59,11 @@ public:
 	*
 	*/
 
+	template <typename ... Components>
+	View withComponents() {
+		auto mask = componentMask<Components ...>();
+		return View(this, mask);
+	}
 
 
 	EntityId createId(uint32_t id){
@@ -101,6 +104,33 @@ private:
 			}
 		}
 	}
+
+	ComponentMask componentMask(EntityId id) {
+		return EntityComponentMask.at(id.index());
+	}
+
+	template <typename C>
+	ComponentMask componentMask() {
+		ComponentMask mask;
+		mask.set(C::family());
+		return mask;
+	}
+
+	template <typename C1, typename C2, typename ... Components>
+	ComponentMask componentMask() {
+		return componentMask<C1>() | componentMask<C2, Components ...>();
+	}
+
+	template <typename C>
+	ComponentMask componentMask(const ComponentHandle<C> &c) {
+		return componentMask<C>();
+	}
+
+	template <typename C1, typename ... Components>
+	ComponentMask componentMask(const ComponentHandle<C1> &c1, const ComponentHandle<Components> &... args) {
+		return componentMask<C1, Components ...>();
+	}
+
 
 
 	friend class Entity;

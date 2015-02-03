@@ -22,7 +22,10 @@ struct Velocity : Component<Velocity>{
 
 struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, double dt){
-	
+		int x = 0;
+		for (Entity & ent : entities.withComponents<Velocity>()){
+			std::cout << x++;
+		}
 	}
 };
 
