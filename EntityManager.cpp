@@ -27,3 +27,16 @@ Entity EntityManager::createEntity(){
 	Entity entity(this, EntityId(index, version));
 	return entity;
 }
+
+/**
+*	@return current capacity of the entityManager
+*/
+size_t EntityManager::capacity(){
+	return EntityComponentMask.size();
+}
+/**
+*	@return number of managed Entities
+*/
+size_t EntityManager::size(){
+	return EntityComponentMask.size() - FreeList.size();
+}

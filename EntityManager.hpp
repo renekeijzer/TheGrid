@@ -11,7 +11,6 @@
 #include "ComponentHandle.hpp"
 #include "BasePool.hpp"
 #include "Pool.hpp"
-#include "BaseView.h"
 
 typedef std::bitset<64> ComponentMask;
 class Entity;
@@ -53,12 +52,25 @@ public:
 		BasePool * pool = ComponentPools[C::family()];
 		return static_cast<const C*>(pool->get(id.index()));
 	}
-	template <typename ... Components>
-	View EntitiesWithComponents() {
-		auto mask = ComponentMask<Components ...>();
-		return View(this, mask);
+	
+	/**
+	*	method creating mask accordingly by components
+	*	method to get components
+	*	method to get Component of entity
+	*
+	*
+	*/
+
+
+
+	EntityId createId(uint32_t id){
+		return EntityId(id, EntityVersion[id]);
 	}
 
+
+
+	size_t capacity();
+	size_t size();
 
 
 
