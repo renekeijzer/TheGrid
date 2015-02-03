@@ -3,7 +3,8 @@
 #include "EntityId.hpp"
 #include "ComponentHandle.hpp"
 
-
+#ifndef ENTITY
+#define ENTITY
 typedef std::bitset<64> ComponentMask;
 
 template <typename C>
@@ -24,6 +25,4 @@ private:
 	EntityId id = INVALID;
 	EntityManager * entityManager;
 };
-
-#include "ViewIterator.hpp"
-#include "BaseView.hpp"
+#endif

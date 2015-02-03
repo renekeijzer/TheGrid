@@ -10,6 +10,9 @@ EntityManager::~EntityManager()
 {
 }
 
+Entity EntityManager::get(EntityId id){
+	return Entity(this, id);
+}
 
 Entity EntityManager::createEntity(){
 	uint32_t index, version;

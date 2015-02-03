@@ -1,9 +1,6 @@
 #include <iostream>
 
-#include "Entity.hpp"
 #include "EntityManager.hpp"
-#include "Component.hpp"
-#include "System.hpp"
 #include "SystemManager.hpp"
 
 struct Position : Component<Position>{
@@ -23,8 +20,8 @@ struct Velocity : Component<Velocity>{
 struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, double dt){
 		int x = 0;
-		for (Entity & ent : entities.withComponents<Velocity>()){
-			std::cout << x++;
+		for (Entity & ent : entities.withComponents<Position, Velocity>()){
+		
 		}
 	}
 };
