@@ -3,6 +3,7 @@
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
 
+
 struct Position : Component<Position>{
 	Position(int xp, int yp) : x(xp), y(yp){}
 	int x;
@@ -21,8 +22,9 @@ struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, double dt){
 		int x = 0;
 		for (Entity & ent : entities.withComponents<Position, Velocity>()){
-		
+			std::cout << ent.getId().index()<< "\r\n";
 		}
+		std::cout << "next\r\n";
 	}
 };
 

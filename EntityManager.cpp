@@ -3,12 +3,18 @@
 
 EntityManager::EntityManager()
 {
+	EntityComponentMask.clear();
 }
 
 
 EntityManager::~EntityManager()
 {
 }
+
+bool EntityManager::valid(EntityId id){
+		return id.index() < EntityVersion.size() && EntityVersion[id.index()] == id.version();
+}
+
 
 Entity EntityManager::get(EntityId id){
 	return Entity(this, id);

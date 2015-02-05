@@ -72,8 +72,15 @@ public:
 			}
 
 			if (indexPointer < capacity) {
+#ifdef VIEWDEBUG
+				std::cout << "EntityId = \t" << indexPointer << "\r\n";
+				std::cout << "mask = \t\t" << mask << "\r\n";
+				std::cout << "cmask = \t" << manager->EntityComponentMask[indexPointer] << "\r\n";
+#endif	
 				Entity entity = manager->get(manager->createId(indexPointer));
-				static_cast<Delegate*>(this)->next_entity(entity);
+				if (entity.valid()){
+					static_cast<Delegate*>(this)->next_entity(entity);
+				}
 			}
 		}
 
@@ -104,9 +111,7 @@ public:
 	public:
 		class Iterator : public ViewIterator<Iterator, All> {
 		public:
-			Iterator(EntityManager *emanager,
-				const ComponentMask cmask,
-				uint32_t index) : ViewIterator<Iterator, All>(emanager, cmask, index) {
+			Iterator(EntityManager *emanager, const ComponentMask cmask, uint32_t index) : ViewIterator<Iterator, All>(emanager, cmask, index) {
 					ViewIterator<Iterator, All>::next();
 				}
 
@@ -184,6 +189,7 @@ public:
 		return EntityId(id, EntityVersion[id]);
 	}
 
+	bool valid(EntityId id);
 
 
 	size_t capacity();
