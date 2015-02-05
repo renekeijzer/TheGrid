@@ -4,6 +4,7 @@
 EntityManager::EntityManager()
 {
 	EntityComponentMask.clear();
+	
 }
 
 

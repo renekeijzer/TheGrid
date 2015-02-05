@@ -78,9 +78,9 @@ public:
 				std::cout << "cmask = \t" << manager->EntityComponentMask[indexPointer] << "\r\n";
 #endif	
 				Entity entity = manager->get(manager->createId(indexPointer));
-				if (entity.valid()){
+			
 					static_cast<Delegate*>(this)->next_entity(entity);
-				}
+				
 			}
 		}
 
@@ -185,6 +185,29 @@ public:
 	}
 
 
+	template<typename C>
+	ComponentHandle<C> getComponent(EntityId id){
+//		if (!hasComponent<C>(id)){
+//			return ComponentHandle<C>();
+//		}
+
+		size_t family = C::family();
+		if (family >= ComponentPools.size()){
+			return ComponentHandle<C>();
+		}
+		BasePool * pool = ComponentPools[family];
+		if (!pool || !EntityComponentMask[id.index()][family]){
+			return ComponentHandle<C>();
+		}
+		return ComponentHandle<C>(this, id);
+	}
+
+	//template<typename C>
+	//bool hasComponent(EntityId id){
+		
+	//}
+
+
 	EntityId createId(uint32_t id){
 		return EntityId(id, EntityVersion[id]);
 	}
@@ -222,6 +245,7 @@ private:
 					pool->expand(id + 1);
 				}
 			}
+		
 		}
 	}
 

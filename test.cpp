@@ -22,15 +22,22 @@ struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, double dt){
 		int x = 0;
 		for (Entity & ent : entities.withComponents<Position, Velocity>()){
-			std::cout << ent.getId().index()<< "\r\n";
+			Position::Handle &pos = ent.getComponent<Position>();
+			Velocity::Handle &vel = ent.getComponent<Velocity>();
+
+			pos->x += vel->x;
+			pos->y += vel->y;
 		}
-		std::cout << "next\r\n";
 	}
 };
 
 struct controllerSystem : System<controllerSystem>{
 	void update(EntityManager & entities, double dt){
-		std::cout << "controllertsystem call \r\n";
+		for (Entity & ent : entities.withComponents<Position>()){
+			Position::Handle & pos = ent.getComponent<Position>();
+
+			std::cout <<"Entity id = " << ent.getId().index() <<"\tx = " << pos->x << "\t y = " << pos->y << "\r\n";
+		}
 	}
 };
 
@@ -48,6 +55,9 @@ int main(){
 	Position::Handle & pos2 = en2.addComponent<Position>( 40, 20);
 	Velocity::Handle & vel2 = en2.addComponent<Velocity>(3, 3);
 
+
+	std::cout << en.getId().index() << "\r\n";
+	std::cout << en2.getId().index() << "\r\n";
 
 	sys.addSystem<movementSystem>();
 	sys.addSystem<controllerSystem>();

@@ -9,7 +9,7 @@
 class SystemManager
 {
 public:
-	SystemManager(EntityManager em) : entityManager(em){}
+	SystemManager(EntityManager & em) : entityManager(em){}
 	
 	template<typename S>
 	void addSystem(std::shared_ptr<S> system){
