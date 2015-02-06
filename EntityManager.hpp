@@ -13,6 +13,8 @@
 #include "BasePool.hpp"
 #include "Pool.hpp"
 #include "EntityId.hpp"
+#include "Analytics.hpp"
+
 
 
 typedef std::bitset<64> ComponentMask;
@@ -142,7 +144,7 @@ public:
 
 
 	Entity createEntity();
-
+	void destroyEntity(EntityId id);
 
 
 	template <typename C, typename ... Args>
@@ -210,7 +212,11 @@ public:
 
 	template <typename C>
 	void removeComponent(EntityId id){
-	
+		const BaseComponent::Family fam = C::family();
+		const uint32_t index = id.index();
+		BasePool* pool = ComponentPools[fam];
+		EntityComponentMask[index].reset(fam);
+		pool->destroy(index);
 	}
 
 
@@ -281,8 +287,9 @@ private:
 		return componentMask<C1, Components ...>();
 	}
 
-
-
+#ifdef ANALYTICS
+	friend class Analytics;
+#endif	
 	friend class Entity;
 	uint32_t indexPointer = 0;
 	std::vector<ComponentMask> EntityComponentMask;

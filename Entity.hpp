@@ -27,6 +27,8 @@ public:
 	template <typename C>
 	void removeComponent(){ entityManager->removeComponent<C>(id); }
 
+	void invalidate();
+	void destroy();
 private:
 	friend class EntityManager;
 	

@@ -63,6 +63,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Analytics.cpp" />
     <ClCompile Include="BaseComponent.cpp" />
     <ClCompile Include="BasePool.cpp" />
     <ClCompile Include="BaseSystem.cpp" />
@@ -72,6 +73,8 @@
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Analytics.hpp" />
+    <ClInclude Include="AnalyticsException.h" />
     <ClInclude Include="BaseComponent.hpp" />
     <ClInclude Include="BasePool.hpp" />
     <ClInclude Include="BaseSystem.hpp" />

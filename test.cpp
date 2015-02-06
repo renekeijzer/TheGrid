@@ -2,7 +2,7 @@
 
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
-
+#include "Analytics.hpp"
 
 struct Position : Component<Position>{
 	Position(int xp, int yp) : x(xp), y(yp){}

@@ -6,10 +6,12 @@
 #include "System.hpp"
 #include "EntityManager.hpp"
 
+
 class SystemManager
 {
 public:
-	SystemManager(EntityManager & em) : entityManager(em){}
+	SystemManager(EntityManager & em) : entityManager(em){
+	}
 	
 	template<typename S>
 	void addSystem(std::shared_ptr<S> system){
@@ -37,6 +39,9 @@ public:
 
 	void configure();
 private:
+#ifdef ANALYTICS
+	friend class Analytics;
+#endif	
 	bool init = false;
 	EntityManager & entityManager;
 	std::unordered_map<BaseSystem::Family, std::shared_ptr<BaseSystem>> systems;

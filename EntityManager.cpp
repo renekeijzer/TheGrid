@@ -50,3 +50,21 @@ size_t EntityManager::capacity(){
 size_t EntityManager::size(){
 	return EntityComponentMask.size() - FreeList.size();
 }
+
+
+void EntityManager::destroyEntity(EntityId id){
+	uint32_t index = id.index();
+	auto mask = EntityComponentMask[index];
+
+	for (size_t i = 0; i < ComponentPools.size(); i++){
+		BasePool * pool = ComponentPools[i];
+		if (pool && mask.test(i)){
+			pool->destroy(index);
+		}
+	}
+
+	EntityComponentMask[index].reset();
+	EntityVersion[index]++;
+	FreeList.push_back(index);
+
+}
