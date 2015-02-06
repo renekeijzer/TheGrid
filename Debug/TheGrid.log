@@ -1,33 +1,40 @@
-﻿Build started 2/6/2015 12:39:36 AM.
-     1>Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" on node 2 (Build target(s)).
+﻿Build started 2/6/2015 1:01:12 PM.
+     1>Project "D:\Users\rene-keijzer\Documents\GitHub\TheGrid\TheGrid.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BaseComponent.cpp BasePool.cpp BaseSystem.cpp Entity.cpp EntityManager.cpp SystemManager.cpp test.cpp
          test.cpp
-     1>c:\users\rene\documents\github\thegrid\thegrid\entitymanager.hpp(152): warning C4291: 'void *operator new(size_t,void *) throw()' : no matching operator delete found; memory will not be freed if initialization throws an exception
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
-                 c:\users\rene\documents\github\thegrid\thegrid\entity.hpp(23) : see reference to function template instantiation 'ComponentHandle<Derived> EntityManager::addComponent<C,int&,int&>(EntityId,int &,int &)' being compiled
+     1>d:\users\rene-keijzer\documents\github\thegrid\entitymanager.hpp(152): warning C4291: 'void *operator new(size_t,void *) throw()' : no matching operator delete found; memory will not be freed if initialization throws an exception
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
+                 d:\users\rene-keijzer\documents\github\thegrid\entity.hpp(23) : see reference to function template instantiation 'ComponentHandle<Derived> EntityManager::addComponent<C,int&,int&>(EntityId,int &,int &)' being compiled
                  with
                  [
                      Derived=Position
          ,            C=Position
                  ]
-                 c:\users\rene\documents\github\thegrid\thegrid\test.cpp(51) : see reference to function template instantiation 'ComponentHandle<Derived> Entity::addComponent<Position,int,int>(int &&,int &&)' being compiled
+                 d:\users\rene-keijzer\documents\github\thegrid\test.cpp(51) : see reference to function template instantiation 'ComponentHandle<Derived> Entity::addComponent<Position,int,int>(int &&,int &&)' being compiled
                  with
                  [
                      Derived=Position
                  ]
-                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
+                 d:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
+         SystemManager.cpp
+         EntityManager.cpp
+         Entity.cpp
+         BaseSystem.cpp
+         BasePool.cpp
+         BaseComponent.cpp
+         Generating Code...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.lib" /MACHINE:X86 Debug\BaseComponent.obj
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\rene-keijzer\Documents\GitHub\TheGrid\Debug\TheGrid.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\rene-keijzer\Documents\GitHub\TheGrid\Debug\TheGrid.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\rene-keijzer\Documents\GitHub\TheGrid\Debug\TheGrid.lib" /MACHINE:X86 Debug\BaseComponent.obj
          Debug\BasePool.obj
          Debug\BaseSystem.obj
          Debug\Entity.obj
          Debug\EntityManager.obj
          Debug\SystemManager.obj
          Debug\test.obj
-         TheGrid.vcxproj -> C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe
-     1>Done Building Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" (Build target(s)).
+         TheGrid.vcxproj -> D:\Users\rene-keijzer\Documents\GitHub\TheGrid\Debug\TheGrid.exe
+     1>Done Building Project "D:\Users\rene-keijzer\Documents\GitHub\TheGrid\TheGrid.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.23
+Time Elapsed 00:00:05.07

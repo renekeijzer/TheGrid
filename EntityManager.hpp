@@ -187,25 +187,31 @@ public:
 
 	template<typename C>
 	ComponentHandle<C> getComponent(EntityId id){
-//		if (!hasComponent<C>(id)){
-//			return ComponentHandle<C>();
-//		}
-
-		size_t family = C::family();
-		if (family >= ComponentPools.size()){
-			return ComponentHandle<C>();
-		}
-		BasePool * pool = ComponentPools[family];
-		if (!pool || !EntityComponentMask[id.index()][family]){
+		if (!hasComponent<C>(id)){
 			return ComponentHandle<C>();
 		}
 		return ComponentHandle<C>(this, id);
 	}
 
-	//template<typename C>
-	//bool hasComponent(EntityId id){
-		
-	//}
+	template<typename C>
+	bool hasComponent(EntityId id){
+		size_t family = C::family();
+		if (family >= ComponentPools.size())
+		{
+			return false;
+		}
+		BasePool * pool = ComponentPools[family];
+		if (!pool || !EntityComponentMask[id.index()][family]){
+			return false;
+		}
+		return true;
+
+	}
+
+	template <typename C>
+	void removeComponent(EntityId id){
+	
+	}
 
 
 	EntityId createId(uint32_t id){

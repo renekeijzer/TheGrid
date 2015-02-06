@@ -24,6 +24,9 @@ public:
 	template <typename C>
 	ComponentHandle<C> getComponent(){ return entityManager->getComponent<C>(id); }
 
+	template <typename C>
+	void removeComponent(){ entityManager->removeComponent<C>(id); }
+
 private:
 	friend class EntityManager;
 	

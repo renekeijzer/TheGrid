@@ -75,7 +75,6 @@
     <ClInclude Include="BaseComponent.hpp" />
     <ClInclude Include="BasePool.hpp" />
     <ClInclude Include="BaseSystem.hpp" />
-    <ClInclude Include="BaseView.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentHandle.hpp" />
     <ClInclude Include="Entity.hpp" />
@@ -84,7 +83,6 @@
     <ClInclude Include="Pool.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemManager.hpp" />
-    <ClInclude Include="ViewIterator.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

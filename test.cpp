@@ -35,7 +35,6 @@ struct controllerSystem : System<controllerSystem>{
 	void update(EntityManager & entities, double dt){
 		for (Entity & ent : entities.withComponents<Position>()){
 			Position::Handle & pos = ent.getComponent<Position>();
-
 			std::cout <<"Entity id = " << ent.getId().index() <<"\tx = " << pos->x << "\t y = " << pos->y << "\r\n";
 		}
 	}
