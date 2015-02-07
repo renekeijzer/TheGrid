@@ -42,7 +42,8 @@ struct controllerSystem : System<controllerSystem>{
 int main(){
 	
 	EntityManager em;
-	SystemManager sys(em);
+	EventManager ev;
+	SystemManager sys(em, ev);
 
 	Entity en = em.createEntity();
 	Position::Handle & pos = en.addComponent<Position>(20, 30);

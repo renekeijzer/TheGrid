@@ -1,10 +1,7 @@
 #include "BaseEvent.hpp"
 
 
-BaseEvent::BaseEvent()
-{
-}
-
+BaseEvent::Family BaseEvent::familyCounter = 0;
 
 BaseEvent::~BaseEvent()
 {

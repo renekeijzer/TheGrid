@@ -92,6 +92,7 @@
     <ClInclude Include="NonCopyable.hpp" />
     <ClInclude Include="Pool.hpp" />
     <ClInclude Include="Receiver.hpp" />
+    <ClInclude Include="SimpleSignal.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemManager.hpp" />
   </ItemGroup>

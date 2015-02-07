@@ -1,4 +1,4 @@
-﻿Build started 2/7/2015 1:29:57 AM.
+﻿Build started 2/8/2015 12:55:04 AM.
      1>Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Analytics.cpp BaseSystem.cpp Entity.cpp EntityManager.cpp SystemManager.cpp test.cpp
@@ -11,27 +11,28 @@
                      Derived=Position
          ,            C=Position
                  ]
-                 c:\users\rene\documents\github\thegrid\thegrid\test.cpp(48) : see reference to function template instantiation 'ComponentHandle<Derived> Entity::addComponent<Position,int,int>(int &&,int &&)' being compiled
+                 c:\users\rene\documents\github\thegrid\thegrid\test.cpp(49) : see reference to function template instantiation 'ComponentHandle<Derived> Entity::addComponent<Position,int,int>(int &&,int &&)' being compiled
                  with
                  [
                      Derived=Position
                  ]
                  c:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
          Generating Code...
-         Compiling...
+         Skipping... (no relevant changes detected)
          SystemManager.cpp
          EntityManager.cpp
          Entity.cpp
          BaseSystem.cpp
          Analytics.cpp
-         Generating Code...
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.lib" /MACHINE:X86 Debug\Analytics.obj
          Debug\BaseComponent.obj
+         Debug\BaseEvent.obj
          Debug\BasePool.obj
          Debug\BaseSystem.obj
          Debug\Entity.obj
          Debug\EntityManager.obj
+         Debug\EventManager.obj
          Debug\SystemManager.obj
          Debug\test.obj
          TheGrid.vcxproj -> C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe
@@ -39,4 +40,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:06.28
+Time Elapsed 00:00:02.07

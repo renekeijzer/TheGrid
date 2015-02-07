@@ -6,12 +6,13 @@
 #include "System.hpp"
 #include "EntityManager.hpp"
 #include "NonCopyable.hpp"
+#include "EventManager.hpp"
 
 #ifdef SYSTEM
 class SystemManager : public NonCopyable
 {
 public:
-	SystemManager(EntityManager & em) : entityManager(em){
+	SystemManager(EntityManager & em, EventManager & ev) : entityManager(em), eventManager(ev){
 	}
 	
 	template<typename S>
@@ -45,6 +46,7 @@ private:
 #endif	
 	bool init = false;
 	EntityManager & entityManager;
+	EventManager & eventManager;
 	std::unordered_map<BaseSystem::Family, std::shared_ptr<BaseSystem>> systems;
 };
 
