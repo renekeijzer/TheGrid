@@ -83,6 +83,7 @@
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="EntityId.hpp" />
     <ClInclude Include="EntityManager.hpp" />
+    <ClInclude Include="NonCopyAble.h" />
     <ClInclude Include="Pool.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemManager.hpp" />

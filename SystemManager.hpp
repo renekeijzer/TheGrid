@@ -5,9 +5,10 @@
 #include "BaseSystem.hpp"
 #include "System.hpp"
 #include "EntityManager.hpp"
+#include "NonCopyAble.h"
 
 #ifdef SYSTEM
-class SystemManager
+class SystemManager : public NonCopyable
 {
 public:
 	SystemManager(EntityManager & em) : entityManager(em){

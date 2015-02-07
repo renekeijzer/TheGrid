@@ -14,7 +14,7 @@
 #include "Pool.hpp"
 #include "EntityId.hpp"
 #include "Analytics.hpp"
-
+#include "NonCopyAble.h"
 
 
 typedef std::bitset<64> ComponentMask;
@@ -23,7 +23,7 @@ class Entity;
 template<bool All = false>
 class BaseView;
 
-class EntityManager
+class EntityManager : public NonCopyable
 {
 public:
 	EntityManager();

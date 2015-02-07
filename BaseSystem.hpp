@@ -1,7 +1,7 @@
 #pragma once
-
+#include "NonCopyAble.h"
 #include "EntityManager.hpp"
-class BaseSystem{
+class BaseSystem : public NonCopyable{
 public:
 	typedef size_t Family;
 

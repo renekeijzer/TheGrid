@@ -52,10 +52,6 @@ int main(){
 	Position::Handle & pos2 = en2.addComponent<Position>( 40, 20);
 	Velocity::Handle & vel2 = en2.addComponent<Velocity>(3, 3);
 
-
-	std::cout << en.getId().index() << "\r\n";
-	std::cout << en2.getId().index() << "\r\n";
-
 	sys.addSystem<movementSystem>();
 	sys.addSystem<controllerSystem>();
 	sys.configure();
