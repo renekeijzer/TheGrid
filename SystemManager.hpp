@@ -5,7 +5,7 @@
 #include "BaseSystem.hpp"
 #include "System.hpp"
 #include "EntityManager.hpp"
-#include "NonCopyAble.h"
+#include "NonCopyable.hpp"
 
 #ifdef SYSTEM
 class SystemManager : public NonCopyable

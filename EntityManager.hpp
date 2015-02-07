@@ -14,7 +14,7 @@
 #include "Pool.hpp"
 #include "EntityId.hpp"
 #include "Analytics.hpp"
-#include "NonCopyAble.h"
+#include "NonCopyable.hpp"
 
 
 typedef std::bitset<64> ComponentMask;

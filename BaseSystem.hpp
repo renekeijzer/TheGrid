@@ -1,5 +1,5 @@
 #pragma once
-#include "NonCopyAble.h"
+#include "NonCopyable.hpp"
 #include "EntityManager.hpp"
 class BaseSystem : public NonCopyable{
 public:
