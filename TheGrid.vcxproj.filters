@@ -39,6 +39,12 @@
     <ClCompile Include="Analytics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EventManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseEvent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EntityManager.hpp">
@@ -80,7 +86,22 @@
     <ClInclude Include="AnalyticsException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="NonCopyAble.h">
+    <ClInclude Include="NonCopyable.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EventManager.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseEvent.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseReceiver.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Receiver.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

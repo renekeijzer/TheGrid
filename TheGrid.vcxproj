@@ -65,10 +65,12 @@
   <ItemGroup>
     <ClCompile Include="Analytics.cpp" />
     <ClCompile Include="BaseComponent.cpp" />
+    <ClCompile Include="BaseEvent.cpp" />
     <ClCompile Include="BasePool.cpp" />
     <ClCompile Include="BaseSystem.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="SystemManager.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
@@ -76,15 +78,20 @@
     <ClInclude Include="Analytics.hpp" />
     <ClInclude Include="AnalyticsException.h" />
     <ClInclude Include="BaseComponent.hpp" />
+    <ClInclude Include="BaseEvent.hpp" />
     <ClInclude Include="BasePool.hpp" />
+    <ClInclude Include="BaseReceiver.hpp" />
     <ClInclude Include="BaseSystem.hpp" />
     <ClInclude Include="Component.hpp" />
     <ClInclude Include="ComponentHandle.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="EntityId.hpp" />
     <ClInclude Include="EntityManager.hpp" />
-    <ClInclude Include="NonCopyAble.h" />
+    <ClInclude Include="Event.hpp" />
+    <ClInclude Include="EventManager.hpp" />
+    <ClInclude Include="NonCopyable.hpp" />
     <ClInclude Include="Pool.hpp" />
+    <ClInclude Include="Receiver.hpp" />
     <ClInclude Include="System.hpp" />
     <ClInclude Include="SystemManager.hpp" />
   </ItemGroup>
