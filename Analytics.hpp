@@ -1,11 +1,12 @@
 #pragma once
-
+#define ANALYTICS
 #ifdef ANALYTICS
 #include "SystemManager.hpp"
 #include "EntityManager.hpp"
 #include "AnalyticsException.h"
 #include <Windows.h>
 
+class SystemManager;
 
 class Analytics
 {
@@ -20,6 +21,7 @@ private:
 	EntityManager & ent;
 
 	static Analytics * instance;
+	bool pressed = false;
 };
 
 #endif

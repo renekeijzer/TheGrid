@@ -1,4 +1,5 @@
 #pragma once
+
 #include "EntityManager.hpp"
 class BaseSystem{
 public:
@@ -14,3 +15,4 @@ public:
 
 protected:
 };
+#define SYSTEM

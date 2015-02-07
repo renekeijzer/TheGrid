@@ -2,7 +2,6 @@
 
 #include "EntityManager.hpp"
 #include "SystemManager.hpp"
-#include "Analytics.hpp"
 
 struct Position : Component<Position>{
 	Position(int xp, int yp) : x(xp), y(yp){}
@@ -35,7 +34,6 @@ struct controllerSystem : System<controllerSystem>{
 	void update(EntityManager & entities, double dt){
 		for (Entity & ent : entities.withComponents<Position>()){
 			Position::Handle & pos = ent.getComponent<Position>();
-			std::cout <<"Entity id = " << ent.getId().index() <<"\tx = " << pos->x << "\t y = " << pos->y << "\r\n";
 		}
 	}
 };
@@ -67,5 +65,6 @@ int main(){
 	while (1){
 		sys.update<movementSystem>(dt);
 		sys.update<controllerSystem>(dt);
+		
 	}
 }

@@ -18,8 +18,26 @@
 	}
 
 void Analytics::log(){
-	if (GetAsyncKeyState(VK_F3) & 0x8000){
-		std::cout << "pressed";
+	if (GetAsyncKeyState(VK_F3) & 0x8000 && !pressed){
+		pressed = true;
+
+
+		std::cout << "=============================================" << std::endl;
+		std::cout << "=               Debug information           =" << std::endl;
+		std::cout << "=============================================" << std::endl;
+		std::cout << std::endl;
+		std::cout << "EntityManager: " << std::endl;
+		std::cout << "\t Components: " << ent.ComponentPools.size() << std::endl;
+		std::cout << "\t Entities managed: " << ent.EntityComponentMask.size() << std::endl;
+		std::cout << "\t Free entity Slots: " << ent.FreeList.size() << std::endl;
+		std::cout << std::endl;
+		std::cout << "SystemManager: " << std::endl;
+		std::cout << "\t Managed Systems: " << sys.systems.size() << std::endl;
+		std::cout << std::endl;
+		std::cout << "=============================================" << std::endl;
+	}
+	else{
+		pressed = false;
 	}
 	
 }

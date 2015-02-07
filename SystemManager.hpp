@@ -6,7 +6,7 @@
 #include "System.hpp"
 #include "EntityManager.hpp"
 
-
+#ifdef SYSTEM
 class SystemManager
 {
 public:
@@ -47,3 +47,4 @@ private:
 	std::unordered_map<BaseSystem::Family, std::shared_ptr<BaseSystem>> systems;
 };
 
+#endif

@@ -1,5 +1,7 @@
 #pragma once
 #include "BaseSystem.hpp"
+#ifdef SYSTEM
+class SystemManager;
 template <typename Derived>
 class System : public BaseSystem {
 public:
@@ -13,3 +15,4 @@ private:
 		return family;
 	}
 };
+#endif
