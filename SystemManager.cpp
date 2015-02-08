@@ -3,7 +3,7 @@
 
 void SystemManager::configure() {
 	for (auto &pair : systems) {
-		pair.second->configure();
+		pair.second->configure(eventManager);
 	}
 	init = true;
 }

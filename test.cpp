@@ -1,6 +1,7 @@
 #include <iostream>
 
 #include "EntityManager.hpp"
+#include "EventManager.hpp"
 #include "SystemManager.hpp"
 
 struct Position : Component<Position>{
@@ -17,24 +18,42 @@ struct Velocity : Component<Velocity>{
 
 };
 
+struct movedEvent : Event<movedEvent>{
+public:
+	explicit movedEvent(Entity & en) : ent(ent){}
+	Entity & ent;
+};
+
 struct movementSystem : System<movementSystem>{
-	void update(EntityManager & entities, double dt){
+	void update(EntityManager & entities, EventManager & events, double dt){
 		int x = 0;
 		for (Entity & ent : entities.withComponents<Position, Velocity>()){
 			Position::Handle &pos = ent.getComponent<Position>();
 			Velocity::Handle &vel = ent.getComponent<Velocity>();
-
+			
 			pos->x += vel->x;
 			pos->y += vel->y;
+
+			events.emit<movedEvent>(ent);
 		}
 	}
 };
 
-struct controllerSystem : System<controllerSystem>{
-	void update(EntityManager & entities, double dt){
+struct controllerSystem : System<controllerSystem>, Receiver<controllerSystem>{
+
+	void configure(EventManager & events) override{
+		events.subscribe<movedEvent>(*this);
+	}	
+
+
+	void update(EntityManager & entities, EventManager & events,  double dt){
 		for (Entity & ent : entities.withComponents<Position>()){
 			Position::Handle & pos = ent.getComponent<Position>();
 		}
+	}
+
+	void receive(movedEvent & event){
+		std::cout << event.ent.getId().index();
 	}
 };
 

@@ -18,3 +18,5 @@ protected:
 typedef Simple::Signal<void(const BaseEvent*)> EventSignal;
 typedef std::shared_ptr<EventSignal> EventSignalPtr;
 typedef std::weak_ptr<EventSignal> EventSignalWeakPtr;
+
+#define BASEEVENT

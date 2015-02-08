@@ -1,5 +1,9 @@
+#pragma once
 #include "NonCopyable.hpp"
 #include "BaseEvent.hpp"
+#include "Event.hpp"
+#include "Receiver.hpp"
+#include "BaseReceiver.hpp"
 
 class EventManager : NonCopyable {
 public:

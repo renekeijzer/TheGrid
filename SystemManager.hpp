@@ -36,7 +36,7 @@ public:
 	void update(double dt) {
 		assert(init && "SystemManager::configure() not called");
 		std::shared_ptr<S> s = find<S>();
-		s->update(entityManager, dt);
+		s->update(entityManager, eventManager, dt);
 	}
 
 	void configure();
