@@ -26,34 +26,30 @@ public:
 
 struct movementSystem : System<movementSystem>{
 	void update(EntityManager & entities, EventManager & events, double dt){
-		int x = 0;
+		
 		for (Entity & ent : entities.withComponents<Position, Velocity>()){
 			Position::Handle &pos = ent.getComponent<Position>();
 			Velocity::Handle &vel = ent.getComponent<Velocity>();
 			
-			pos->x += vel->x;
-			pos->y += vel->y;
-
-			events.emit<movedEvent>(ent);
 		}
 	}
 };
 
-struct controllerSystem : System<controllerSystem>, Receiver<controllerSystem>{
-
+class controllerSystem : public System<controllerSystem>, public Receiver<controllerSystem>{
+public:
 	void configure(EventManager & events) override{
 		events.subscribe<movedEvent>(*this);
 	}	
 
 
-	void update(EntityManager & entities, EventManager & events,  double dt){
+	void update(EntityManager & entities, EventManager & events,  double dt)override{
 		for (Entity & ent : entities.withComponents<Position>()){
 			Position::Handle & pos = ent.getComponent<Position>();
 		}
 	}
 
-	void receive(movedEvent & event){
-		std::cout << event.ent.getId().index();
+	void receive(const movedEvent & event){
+		std::cout << "Working sorta";
 	}
 };
 

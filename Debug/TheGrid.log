@@ -1,21 +1,36 @@
-﻿Build started 2/8/2015 9:55:59 PM.
+﻿Build started 2/8/2015 10:13:52 PM.
      1>Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt test.cpp
          test.cpp
-     1>c:\users\rene\documents\github\thegrid\thegrid\eventmanager.hpp(15): error C2440: 'initializing' : cannot convert from 'void (__thiscall controllerSystem::* )(movedEvent &)' to 'void (__thiscall controllerSystem::* )(const E &)'
+     1>c:\users\rene\documents\github\thegrid\thegrid\entitymanager.hpp(154): warning C4291: 'void *operator new(size_t,void *) throw()' : no matching operator delete found; memory will not be freed if initialization throws an exception
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
+                 c:\users\rene\documents\github\thegrid\thegrid\entity.hpp(23) : see reference to function template instantiation 'ComponentHandle<Derived> EntityManager::addComponent<C,int&,int&>(EntityId,int &,int &)' being compiled
                  with
                  [
-                     E=movedEvent
+                     Derived=Position
+         ,            C=Position
                  ]
-                 Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
-                 c:\users\rene\documents\github\thegrid\thegrid\test.cpp(45) : see reference to function template instantiation 'void EventManager::subscribe<movedEvent,controllerSystem>(Receiver &)' being compiled
+                 c:\users\rene\documents\github\thegrid\thegrid\test.cpp(68) : see reference to function template instantiation 'ComponentHandle<Derived> Entity::addComponent<Position,int,int>(int &&,int &&)' being compiled
                  with
                  [
-                     Receiver=controllerSystem
+                     Derived=Position
                  ]
-     1>Done Building Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" (Build target(s)) -- FAILED.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\new(58) : see declaration of 'operator new'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.lib" /MACHINE:X86 Debug\Analytics.obj
+         Debug\BaseComponent.obj
+         Debug\BaseEvent.obj
+         Debug\BasePool.obj
+         Debug\BaseSystem.obj
+         Debug\Entity.obj
+         Debug\EntityManager.obj
+         Debug\EventManager.obj
+         Debug\SystemManager.obj
+         Debug\test.obj
+         TheGrid.vcxproj -> C:\Users\rene\Documents\GitHub\TheGrid\Debug\TheGrid.exe
+     1>Done Building Project "C:\Users\rene\Documents\GitHub\TheGrid\TheGrid\TheGrid.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.21
+Time Elapsed 00:00:01.84
