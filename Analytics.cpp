@@ -10,9 +10,9 @@
 		return instance;
 	}
 
-	Analytics * Analytics::get(EntityManager & eMan, SystemManager & sMan){
+	Analytics * Analytics::get(EntityManager & eMan, SystemManager & sMan, EventManager & evMan){
 		if (!instance){
-			instance = new Analytics(eMan, sMan);
+			instance = new Analytics(eMan, sMan, evMan);
 		}
 		return instance;
 	}
@@ -33,6 +33,9 @@ void Analytics::log(){
 		std::cout << std::endl;
 		std::cout << "SystemManager: " << std::endl;
 		std::cout << "\t Managed Systems: " << sys.systems.size() << std::endl;
+		std::cout << std::endl;
+		std::cout << "EventManager: " << std::endl;
+		std::cout << "\t Connected Reveivers : " << event.connectedReceivers() << std::endl;
 		std::cout << std::endl;
 		std::cout << "=============================================" << std::endl;
 	}

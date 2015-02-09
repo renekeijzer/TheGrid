@@ -3,7 +3,7 @@
 #include "EntityManager.hpp"
 #include "EventManager.hpp"
 #include "SystemManager.hpp"
-
+#include "Analytics.hpp"
 struct Position : Component<Position>{
 	Position(int xp, int yp) : x(xp), y(yp){}
 	int x;
@@ -60,6 +60,8 @@ int main(){
 	EventManager ev;
 	SystemManager sys(em, ev);
 
+	Analytics * an = Analytics::get(em, sys, ev);
+
 	Entity en = em.createEntity();
 	Position::Handle & pos = en.addComponent<Position>(20, 30);
 	Velocity::Handle & vel = en.addComponent<Velocity>(2, 2);
@@ -77,6 +79,6 @@ int main(){
 	while (1){
 		sys.update<movementSystem>(dt);
 		sys.update<controllerSystem>(dt);
-		
+		an->log();
 	}
 }
