@@ -26,6 +26,8 @@ public:
 
 	template <typename C>
 	void removeComponent(){ entityManager->removeComponent<C>(id); }
+	template <typename C>
+	bool hasComponent(){ return entityManager->hasComponent<C>(id); }
 
 	void invalidate();
 	void destroy();
