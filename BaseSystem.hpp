@@ -4,6 +4,7 @@
 #include "EventManager.hpp"
 class BaseSystem : public NonCopyable{
 public:
+	BaseSystem(double interval = 0) : Interval(interval) {}
 	typedef size_t Family;
 
 	virtual ~BaseSystem();
@@ -15,5 +16,9 @@ public:
 	static Family familyCounter;
 
 protected:
+	double Interval = 0;
+private:
+	friend class SystemManager;
+	double ElapsedTime = 0;
 };
 #define SYSTEM

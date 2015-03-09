@@ -36,7 +36,11 @@ public:
 	void update(double dt) {
 		assert(init && "SystemManager::configure() not called");
 		std::shared_ptr<S> s = find<S>();
+		if (s->Interval + s->ElapsedTime > dt){
+			return;
+		}
 		s->update(entityManager, eventManager, dt);
+		s->ElapsedTime = dt;
 	}
 
 	void configure();

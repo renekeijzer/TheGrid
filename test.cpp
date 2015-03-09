@@ -53,7 +53,7 @@ public:
 	}
 };
 
-
+/*
 int main(){
 	
 	EntityManager em;
@@ -81,4 +81,4 @@ int main(){
 		sys.update<controllerSystem>(dt);
 		an->log();
 	}
-}
+}*/
