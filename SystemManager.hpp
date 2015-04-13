@@ -40,6 +40,7 @@ public:
 			return;
 		}
 		s->update(entityManager, eventManager, dt);
+
 		s->ElapsedTime = dt;
 	}
 

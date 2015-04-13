@@ -1,4 +1,5 @@
 #pragma once
+#include <ostream>
 #include "ComponentHandle.hpp"
 #include "BaseComponent.hpp"
 template <typename Derived>
@@ -6,6 +7,7 @@ struct Component : public BaseComponent{
 public:
 
 	typedef ComponentHandle<Derived> Handle;
+	virtual std::string toString(){ return "not implemented"; }
 	static Family family();
 };
 
