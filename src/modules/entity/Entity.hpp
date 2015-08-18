@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __ENTITY__
+#define __ENTITY__
+
 #include "EntityManager.hpp"
 #include "EntityId.hpp"
 #include "ComponentHandle.hpp"
@@ -51,4 +53,5 @@ private:
 	EntityId id = INVALID;
 	EntityManager * entityManager;
 };
+#endif
 #endif

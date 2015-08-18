@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __ANALYTICSEXCEPTION__
+#define __ANALYTICSEXCEPTION__
+
 #include <exception>
 #include <string>
 class AnalyticsException : public std::exception{
@@ -12,3 +14,4 @@ private:
 	std::string mes = "An Analytics exception occured, undefine ANALYTICS or check the problem";
 
 };
+#endif

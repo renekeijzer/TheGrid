@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __ENTITYMANAGER__
+#define __ENTITYMANAGER__
+
+
 #include <bitset>
 #include <vector>
 #include <list>
@@ -118,7 +121,6 @@ public:
 				}
 
 			void next_entity(Entity &entity) {}
-		};
 
 
 		Iterator begin() { return Iterator(manager, mask, 0); }
@@ -297,3 +299,6 @@ private:
 	std::vector<uint32_t>EntityVersion;
 	std::list<uint32_t> FreeList;
 };
+		};
+#endif
+		

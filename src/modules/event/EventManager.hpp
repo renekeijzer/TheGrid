@@ -1,4 +1,6 @@
-#pragma once
+
+#ifndef __EVENTMANAGER__
+#define __EVENTMANAGER__
 #include "NonCopyable.hpp"
 #include "BaseEvent.hpp"
 #include "Event.hpp"
@@ -63,3 +65,4 @@ private:
 
 	std::vector<EventSignalPtr> handlers;
 };
+#endif

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __POOL__
+#define __POOL__
+
 #include "BasePool.hpp"
 template <typename T, std::size_t ChunkSize = 8192>
 class Pool : public BasePool {
@@ -13,3 +15,4 @@ public:
 		ptr->~T();
 	}
 };
+#endif

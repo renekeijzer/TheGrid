@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __COMPONENT__
+#define __COMPONENT__
+
 #include <ostream>
 #include "ComponentHandle.hpp"
 #include "BaseComponent.hpp"
@@ -17,3 +19,5 @@ BaseComponent::Family Component<C>::family(){
 	static Family family = familyCounter++;
 	return family;
 }
+
+#endif

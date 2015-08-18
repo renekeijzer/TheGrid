@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __EVENT__
+#define __EVENT__
 #ifdef BASEEVENT
 #include "BaseEvent.hpp"
 template <typename Derived>
@@ -13,4 +14,5 @@ public:
 
 
 };
+#endif
 #endif

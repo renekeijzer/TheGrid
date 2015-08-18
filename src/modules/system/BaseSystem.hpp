@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __BASESYSTEM__
+#define __BASESYSTEM__
+
+
 #include "NonCopyable.hpp"
 #include "EntityManager.hpp"
 #include "EventManager.hpp"
@@ -22,3 +25,4 @@ private:
 	double ElapsedTime = 0;
 };
 #define SYSTEM
+#endif

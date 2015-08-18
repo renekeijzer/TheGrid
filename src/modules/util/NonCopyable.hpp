@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __NONCOPYABLE__
+#define __NONCOPYABLE__
+
 class NonCopyable {
 protected:
 	NonCopyable() = default;
@@ -7,3 +9,4 @@ protected:
 	NonCopyable(const NonCopyable&) = delete;
 	NonCopyable& operator = (const NonCopyable &) = delete;
 };
+#endif

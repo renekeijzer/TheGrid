@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __BASEPOOL__
+#define __BASEPOOL__
+
+
 #include <vector>
 #include <cassert>
 class BasePool
@@ -33,3 +36,4 @@ protected:
 
 };
 
+#endif

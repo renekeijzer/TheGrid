@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __ENTITYID__
+#define __ENTITYID__
 #include <cstdint>
 
 #include "EntityManager.hpp"
@@ -20,3 +21,4 @@ private:
 	friend class EntityManager;
 	uint64_t Eid;
 };
+#endif

@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __BASEEVENT__
+#define __BASEEVENT__
+
 #include <utility>
 #include <memory>
 #include "SimpleSignal.hpp"
@@ -20,3 +22,4 @@ typedef std::shared_ptr<EventSignal> EventSignalPtr;
 typedef std::weak_ptr<EventSignal> EventSignalWeakPtr;
 
 #define BASEEVENT
+#endif

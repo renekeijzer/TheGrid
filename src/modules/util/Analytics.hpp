@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __ANALYTICS__
+#define __ANALYTICS__
+
 #define ANALYTICS
 #ifdef ANALYTICS
 #include "SystemManager.hpp"
@@ -26,4 +28,5 @@ private:
 	bool pressed = false;
 };
 
+#endif
 #endif

@@ -26,7 +26,7 @@ ifeq ($(MAKECMDGOALS),grid)
 		LDFLAGS		+= 
 		LDLIBS 		+= 
 	endif
-	include Targets/Makefile.vps
+	include Targets/Makefile.grid
 endif
 ifeq ($(MAKECMDGOALS),clean)
 	include Targets/Makefile.clean

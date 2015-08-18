@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __SYSTEM__
+#define __SYSTEM__
+
 #include "BaseSystem.hpp"
 #ifdef SYSTEM
 class SystemManager;
@@ -16,4 +18,5 @@ private:
 		return family;
 	}
 };
+#endif
 #endif

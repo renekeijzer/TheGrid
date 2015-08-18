@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __COMPONENTHANDLE__
+#define __COMPONENTHANDLE__
 #include "EntityManager.hpp"
 #include "Entity.hpp"
 #include "EntityId.hpp"
@@ -60,3 +61,5 @@ private:
 	EntityManager * manager;
 	EntityId id;
 };
+
+#endif

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __BASECOMPONENT__
+#define __BASECOMPONENT__
 #include <exception>
 
 struct BaseComponent
@@ -15,3 +16,4 @@ protected:
 	static Family familyCounter;
 };
 
+#endif

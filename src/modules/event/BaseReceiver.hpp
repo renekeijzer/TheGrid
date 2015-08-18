@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __BASERECEIVER__
+#define __BASERECEIVER__
 #include <list>
 #include <memory>
 
@@ -29,3 +30,4 @@ private:
 	friend class EventManager;
 	std::list<std::pair<EventSignalWeakPtr, std::size_t>> connections;
 };
+#endif

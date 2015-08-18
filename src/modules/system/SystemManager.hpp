@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __SYSTEMMANAGER__
+#define __SYSTEMMANAGER__
+
 #include <memory>
 #include <unordered_map>
 
@@ -55,4 +57,5 @@ private:
 	std::unordered_map<BaseSystem::Family, std::shared_ptr<BaseSystem>> systems;
 };
 
+#endif
 #endif
