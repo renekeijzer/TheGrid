@@ -1,0 +1,5 @@
+#########MODULES##########
+
+THEGRID_ENTITY = ../../src/modules/entity/
+THEGRID_SYSTEM = ../../src/modules/system/
+THEGRID_EVENT = ../../src/modules/event/
