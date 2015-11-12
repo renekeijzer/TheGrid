@@ -5,7 +5,7 @@ class SystemManager;
 template <typename Derived>
 class System : public BaseSystem {
 public:
-	System(double interval = 0) : BaseSystem(interval){}
+	System() : BaseSystem(){}
 	virtual ~System() {}
 
 private:
