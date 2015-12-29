@@ -1,3 +1,4 @@
+/*
 #ifndef __ANALYTICS__
 #define __ANALYTICS__
 
@@ -7,7 +8,6 @@
 #include "EntityManager.hpp"
 #include "EventManager.hpp"
 #include "AnalyticsException.h"
-#include <Windows.h>
 
 class SystemManager;
 
@@ -30,3 +30,4 @@ private:
 
 #endif
 #endif
+*/

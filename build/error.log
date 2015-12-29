@@ -1,0 +1,221 @@
+In file included from ../src/modules/entity/ComponentHandle.hpp:5:0,
+                 from ../src/modules/entity/Component.hpp:5,
+                 from ../src/modules/entity/EntityManager.hpp:13,
+                 from ../src/modules/entity/EntityManager.cpp:1:
+../src/modules/entity/Entity.hpp:53:23: error: expected ‘)’ before ‘*’ token
+  Entity(EntityManager * man, EntityId Eid) : entityManager(man), id(Eid){}
+                       ^
+../src/modules/entity/Entity.hpp:55:2: error: ‘EntityManager’ does not name a type
+  EntityManager * entityManager;
+  ^
+../src/modules/entity/Entity.hpp: In member function ‘ComponentHandle<C> Entity::addComponent(Args&& ...)’:
+../src/modules/entity/Entity.hpp:26:60: error: ‘entityManager’ was not declared in this scope
+  ComponentHandle<C> addComponent(Args && ... args){ return entityManager->addComponent<C>(id, args ...); }
+                                                            ^
+../src/modules/entity/Entity.hpp: In member function ‘ComponentHandle<C> Entity::getComponent()’:
+../src/modules/entity/Entity.hpp:28:44: error: ‘entityManager’ was not declared in this scope
+  ComponentHandle<C> getComponent(){ return entityManager->getComponent<C>(id); }
+                                            ^
+../src/modules/entity/Entity.hpp: In member function ‘const ComponentHandle<C> Entity::getComponent() const’:
+../src/modules/entity/Entity.hpp:30:57: error: ‘entityManager’ was not declared in this scope
+  const ComponentHandle<C> getComponent() const { return entityManager->getComponent<C>(id); }
+                                                         ^
+../src/modules/entity/Entity.hpp: In member function ‘void Entity::removeComponent()’:
+../src/modules/entity/Entity.hpp:33:26: error: ‘entityManager’ was not declared in this scope
+  void removeComponent(){ entityManager->removeComponent<C>(id); }
+                          ^
+../src/modules/entity/Entity.hpp: In member function ‘bool Entity::hasComponent()’:
+../src/modules/entity/Entity.hpp:35:30: error: ‘entityManager’ was not declared in this scope
+  bool hasComponent(){ return entityManager->hasComponent<C>(id); }
+                              ^
+../src/modules/entity/Entity.hpp: In member function ‘const bool Entity::hasComponent() const’:
+../src/modules/entity/Entity.hpp:38:43: error: ‘entityManager’ was not declared in this scope
+  const bool hasComponent() const { return entityManager->hasComponent<C>(id); }
+                                           ^
+In file included from ../src/modules/entity/Component.hpp:5:0,
+                 from ../src/modules/entity/EntityManager.hpp:13,
+                 from ../src/modules/entity/EntityManager.cpp:1:
+../src/modules/entity/ComponentHandle.hpp: At global scope:
+../src/modules/entity/ComponentHandle.hpp:58:32: error: expected ‘)’ before ‘*’ token
+  ComponentHandle(EntityManager * oManager, EntityId oId) : manager{ oManager }, id{ oId }{}
+                                ^
+../src/modules/entity/ComponentHandle.hpp:58:79: error: expected unqualified-id before ‘,’ token
+  ComponentHandle(EntityManager * oManager, EntityId oId) : manager{ oManager }, id{ oId }{}
+                                                                               ^
+../src/modules/entity/ComponentHandle.hpp:58:90: error: expected unqualified-id before ‘{’ token
+  ComponentHandle(EntityManager * oManager, EntityId oId) : manager{ oManager }, id{ oId }{}
+                                                                                          ^
+../src/modules/entity/ComponentHandle.hpp:59:24: error: ‘EntityManager’ does not name a type
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                        ^
+../src/modules/entity/ComponentHandle.hpp:59:40: error: ISO C++ forbids declaration of ‘oManager’ with no type [-fpermissive]
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                                        ^
+../src/modules/entity/ComponentHandle.hpp:61:2: error: ‘EntityManager’ does not name a type
+  EntityManager * manager;
+  ^
+../src/modules/entity/ComponentHandle.hpp: In constructor ‘ComponentHandle<C>::ComponentHandle()’:
+../src/modules/entity/ComponentHandle.hpp:23:22: error: class ‘ComponentHandle<C>’ does not have any field named ‘manager’
+  ComponentHandle() : manager{ nullptr }{}
+                      ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘bool ComponentHandle<C>::valid() const’:
+../src/modules/entity/ComponentHandle.hpp:26:10: error: ‘manager’ was not declared in this scope
+   return manager && manager->valid(id) && manager->hasComponent<ComponentType>(id);
+          ^
+../src/modules/entity/ComponentHandle.hpp:26:78: error: expected primary-expression before ‘>’ token
+   return manager && manager->valid(id) && manager->hasComponent<ComponentType>(id);
+                                                                              ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘ComponentHandle<C>::ComponentType* ComponentHandle<C>::operator->()’:
+../src/modules/entity/ComponentHandle.hpp:33:10: error: ‘manager’ was not declared in this scope
+   return manager->getComponentPtr<ComponentType>(id);
+          ^
+../src/modules/entity/ComponentHandle.hpp:33:48: error: expected primary-expression before ‘>’ token
+   return manager->getComponentPtr<ComponentType>(id);
+                                                ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘const ComponentType* ComponentHandle<C>::operator->() const’:
+../src/modules/entity/ComponentHandle.hpp:36:10: error: ‘manager’ was not declared in this scope
+   return manager->getComponentPtr<ComponentType>(id);
+          ^
+../src/modules/entity/ComponentHandle.hpp:36:48: error: expected primary-expression before ‘>’ token
+   return manager->getComponentPtr<ComponentType>(id);
+                                                ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘ComponentHandle<C>::ComponentType* ComponentHandle<C>::get()’:
+../src/modules/entity/ComponentHandle.hpp:40:10: error: ‘manager’ was not declared in this scope
+   return manager->getComponentPtr<ComponentType>(id);
+          ^
+../src/modules/entity/ComponentHandle.hpp:40:48: error: expected primary-expression before ‘>’ token
+   return manager->getComponentPtr<ComponentType>(id);
+                                                ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘const ComponentType* ComponentHandle<C>::get() const’:
+../src/modules/entity/ComponentHandle.hpp:45:10: error: ‘manager’ was not declared in this scope
+   return manager->getComponentPtr<ComponentType>(id);
+          ^
+../src/modules/entity/ComponentHandle.hpp:45:48: error: expected primary-expression before ‘>’ token
+   return manager->getComponentPtr<ComponentType>(id);
+                                                ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘void ComponentHandle<C>::remove()’:
+../src/modules/entity/ComponentHandle.hpp:49:3: error: ‘manager’ was not declared in this scope
+   manager->removeComponent<ComponentType>(id);
+   ^
+../src/modules/entity/ComponentHandle.hpp:49:41: error: expected primary-expression before ‘>’ token
+   manager->removeComponent<ComponentType>(id);
+                                         ^
+../src/modules/entity/ComponentHandle.hpp: In member function ‘bool ComponentHandle<C>::operator==(const ComponentHandle<C>&) const’:
+../src/modules/entity/ComponentHandle.hpp:52:96: error: ‘manager’ was not declared in this scope
+  bool operator== (const ComponentHandle<ComponentType> & other)const { return other.manager == manager && id == other.id; }
+                                                                                                ^
+../src/modules/entity/ComponentHandle.hpp: In constructor ‘ComponentHandle<C>::ComponentHandle(const int*, EntityId)’:
+../src/modules/entity/ComponentHandle.hpp:59:67: error: class ‘ComponentHandle<C>’ does not have any field named ‘manager’
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                                                                   ^
+../src/modules/entity/ComponentHandle.hpp:59:87: error: expected type-specifier before ‘EntityManager’
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                                                                                       ^
+../src/modules/entity/ComponentHandle.hpp:59:87: error: expected ‘>’ before ‘EntityManager’
+../src/modules/entity/ComponentHandle.hpp:59:87: error: expected ‘(’ before ‘EntityManager’
+../src/modules/entity/ComponentHandle.hpp:59:87: error: ‘EntityManager’ was not declared in this scope
+../src/modules/entity/ComponentHandle.hpp:59:101: error: expected primary-expression before ‘>’ token
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                                                                                                     ^
+../src/modules/entity/ComponentHandle.hpp:59:113: error: expected ‘)’ before ‘}’ token
+  ComponentHandle(const EntityManager * oManager, EntityId oid) :  manager{ const_cast<EntityManager*>(oManager) }, id{ oid }{}
+                                                                                                                 ^
+In file included from ../src/modules/entity/EntityManager.cpp:1:0:
+../src/modules/entity/EntityManager.hpp: At global scope:
+../src/modules/entity/EntityManager.hpp:134:35: error: ISO C++ forbids declaration of ‘BaseView’ with no type [-fpermissive]
+   BaseView(EntityManager *emanager) : manager(emanager) { mask.set(); }
+                                   ^
+../src/modules/entity/EntityManager.hpp:134:71: error: declaration of ‘int EntityManager::BaseView<All>::Iterator::BaseView(EntityManager*)’ [-fpermissive]
+   BaseView(EntityManager *emanager) : manager(emanager) { mask.set(); }
+                                                                       ^
+../src/modules/entity/EntityManager.hpp:115:17: error: changes meaning of ‘BaseView’ from ‘class EntityManager::BaseView<All> EntityManager::BaseView<All>::BaseView’ [-fpermissive]
+  class BaseView {
+                 ^
+../src/modules/entity/EntityManager.hpp:135:56: error: ISO C++ forbids declaration of ‘BaseView’ with no type [-fpermissive]
+   BaseView(EntityManager *emanager, ComponentMask cmask) : manager(emanager), mask(cmask) {}
+                                                        ^
+In file included from ../src/modules/entity/EntityManager.cpp:1:0:
+../src/modules/entity/EntityManager.hpp: In member function ‘Entity EntityManager::ViewIterator<Delegate, All>::operator*()’:
+../src/modules/entity/EntityManager.hpp:51:36: error: ‘class EntityManager’ has no member named ‘createId’
+    return Entity(manager, manager->createId(indexPointer));
+                                    ^
+../src/modules/entity/EntityManager.hpp: In member function ‘const Entity EntityManager::ViewIterator<Delegate, All>::operator*() const’:
+../src/modules/entity/EntityManager.hpp:56:36: error: ‘class EntityManager’ has no member named ‘createId’
+    return Entity(manager, manager->createId(indexPointer));
+                                    ^
+../src/modules/entity/EntityManager.hpp: In constructor ‘EntityManager::ViewIterator<Delegate, All>::ViewIterator(EntityManager*, uint32_t)’:
+../src/modules/entity/EntityManager.hpp:60:118: error: ‘class EntityManager’ has no member named ‘capacity’
+   ViewIterator(EntityManager * emanager, uint32_t index) : manager(emanager), indexPointer(index), capacity(manager->capacity()){
+                                                                                                                      ^
+In file included from ../src/modules/entity/EntityManager.cpp:1:0:
+../src/modules/entity/EntityManager.hpp:62:14: error: ‘class EntityManager’ has no member named ‘FreeList’
+     manager->FreeList.sort();
+              ^
+../src/modules/entity/EntityManager.hpp:63:31: error: ‘class EntityManager’ has no member named ‘FreeList’
+     freeListCursor = manager->FreeList.begin();
+                               ^
+../src/modules/entity/EntityManager.hpp: In constructor ‘EntityManager::ViewIterator<Delegate, All>::ViewIterator(EntityManager*, ComponentMask, uint32_t)’:
+../src/modules/entity/EntityManager.hpp:66:158: error: ‘class EntityManager’ has no member named ‘capacity’
+   ViewIterator(EntityManager * emanager, const ComponentMask cMask, uint32_t index) : manager(emanager), mask(cMask), indexPointer(index), capacity(manager->capacity()){
+                                                                                                                                                              ^
+../src/modules/entity/EntityManager.hpp:68:14: error: ‘class EntityManager’ has no member named ‘FreeList’
+     manager->FreeList.sort();
+              ^
+../src/modules/entity/EntityManager.hpp:69:31: error: ‘class EntityManager’ has no member named ‘FreeList’
+     freeListCursor = manager->FreeList.begin();
+                               ^
+../src/modules/entity/EntityManager.hpp: In member function ‘void EntityManager::ViewIterator<Delegate, All>::next()’:
+../src/modules/entity/EntityManager.hpp:85:30: error: ‘class EntityManager’ has no member named ‘get’
+     Entity entity = manager->get(manager->createId(indexPointer));
+                              ^
+../src/modules/entity/EntityManager.hpp:85:43: error: ‘class EntityManager’ has no member named ‘createId’
+     Entity entity = manager->get(manager->createId(indexPointer));
+                                           ^
+../src/modules/entity/EntityManager.hpp: In member function ‘bool EntityManager::ViewIterator<Delegate, All>::predicate()’:
+../src/modules/entity/EntityManager.hpp:93:48: error: ‘class EntityManager’ has no member named ‘EntityComponentMask’
+    return (All && valid_entity()) || (manager->EntityComponentMask[indexPointer] & mask) == mask;
+                                                ^
+../src/modules/entity/EntityManager.hpp: In member function ‘bool EntityManager::ViewIterator<Delegate, All>::valid_entity()’:
+../src/modules/entity/EntityManager.hpp:97:35: error: ‘class EntityManager’ has no member named ‘FreeList’
+    if (freeListCursor != manager->FreeList.end() && *freeListCursor == indexPointer) {
+                                   ^
+../src/modules/entity/EntityManager.hpp: In member function ‘EntityManager::BaseView<All>::Iterator EntityManager::BaseView<All>::Iterator::end()’:
+../src/modules/entity/EntityManager.hpp:127:69: error: ‘class EntityManager’ has no member named ‘capacity’
+   Iterator end() { return Iterator(manager, mask, uint32_t(manager->capacity())); }
+                                                                     ^
+../src/modules/entity/EntityManager.hpp: In member function ‘const EntityManager::BaseView<All>::Iterator EntityManager::BaseView<All>::Iterator::end() const’:
+../src/modules/entity/EntityManager.hpp:129:72: error: ‘class EntityManager’ has no member named ‘capacity’
+   const Iterator end() const { return Iterator(manager, mask, manager->capacity()); }
+                                                                        ^
+../src/modules/entity/EntityManager.hpp: In member function ‘int EntityManager::BaseView<All>::Iterator::BaseView(EntityManager*)’:
+../src/modules/entity/EntityManager.hpp:134:39: error: only constructors take member initializers
+   BaseView(EntityManager *emanager) : manager(emanager) { mask.set(); }
+                                       ^
+../src/modules/entity/EntityManager.hpp: In member function ‘int EntityManager::BaseView<All>::Iterator::BaseView(EntityManager*, ComponentMask)’:
+../src/modules/entity/EntityManager.hpp:135:60: error: only constructors take member initializers
+   BaseView(EntityManager *emanager, ComponentMask cmask) : manager(emanager), mask(cmask) {}
+                                                            ^
+../src/modules/entity/EntityManager.cpp: In constructor ‘EntityManager::EntityManager()’:
+../src/modules/entity/EntityManager.cpp:6:2: error: ‘EntityComponentMask’ was not declared in this scope
+  EntityComponentMask.clear();
+  ^
+../src/modules/entity/EntityManager.cpp: At global scope:
+../src/modules/entity/EntityManager.cpp:15:38: error: no ‘bool EntityManager::valid(EntityId)’ member function declared in class ‘EntityManager’
+ bool EntityManager::valid(EntityId id){
+                                      ^
+../src/modules/entity/EntityManager.cpp:20:38: error: no ‘Entity EntityManager::get(EntityId)’ member function declared in class ‘EntityManager’
+ Entity EntityManager::get(EntityId id){
+                                      ^
+../src/modules/entity/EntityManager.cpp:24:36: error: no ‘Entity EntityManager::createEntity()’ member function declared in class ‘EntityManager’
+ Entity EntityManager::createEntity(){
+                                    ^
+../src/modules/entity/EntityManager.cpp:44:32: error: no ‘size_t EntityManager::capacity()’ member function declared in class ‘EntityManager’
+ size_t EntityManager::capacity(){
+                                ^
+../src/modules/entity/EntityManager.cpp:50:28: error: no ‘size_t EntityManager::size()’ member function declared in class ‘EntityManager’
+ size_t EntityManager::size(){
+                            ^
+../src/modules/entity/EntityManager.cpp:55:46: error: no ‘void EntityManager::destroyEntity(EntityId)’ member function declared in class ‘EntityManager’
+ void EntityManager::destroyEntity(EntityId id){
+                                              ^
+make: *** [../src/modules/entity/EntityManager.o] Error 1

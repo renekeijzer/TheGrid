@@ -13,6 +13,8 @@ MODULES 						=
 
 ifeq ($(OS),Windows_NT)
 	CXXFLAGS 	+= -DWIN32 -fPIC
+else
+	CXXFLAGS	+= -fPIC
 endif
 
 ifeq ($(MAKECMDGOALS),grid)

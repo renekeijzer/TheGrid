@@ -5,6 +5,7 @@
 #include "EntityId.hpp"
 #include "ComponentHandle.hpp"
 
+#ifdef __ENTITYMANAGER__
 #ifndef ENTITY
 #define ENTITY
 typedef std::bitset<64> ComponentMask;
@@ -48,10 +49,11 @@ public:
 	}
 private:
 	friend class EntityManager;
-	
+
 	Entity(EntityManager * man, EntityId Eid) : entityManager(man), id(Eid){}
 	EntityId id = INVALID;
 	EntityManager * entityManager;
 };
+#endif
 #endif
 #endif

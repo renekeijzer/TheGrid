@@ -1,5 +1,6 @@
 #ifndef __COMPONENTHANDLE__
 #define __COMPONENTHANDLE__
+#ifdef __ENTITYMANAGER__
 #include "EntityManager.hpp"
 #include "Entity.hpp"
 #include "EntityId.hpp"
@@ -13,7 +14,6 @@
 *		 - If a component is removed from its host entity.
 *		 - If its host entity is destroyed.
 */
-
 
 
 template<typename C>
@@ -62,4 +62,5 @@ private:
 	EntityId id;
 };
 
+#endif
 #endif

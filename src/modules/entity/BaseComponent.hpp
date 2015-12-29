@@ -1,6 +1,7 @@
 #ifndef __BASECOMPONENT__
 #define __BASECOMPONENT__
 #include <exception>
+#include <stdlib.h>
 
 struct BaseComponent
 {
@@ -11,7 +12,7 @@ public:
 
 protected:
 	static void fail(){
-		throw std::bad_alloc();
+		//throw std::bad_alloc();
 	}
 	static Family familyCounter;
 };

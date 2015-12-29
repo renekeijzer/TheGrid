@@ -1,3 +1,4 @@
+/*
 #include "Analytics.hpp"
 
 #ifdef ANALYTICS
@@ -18,7 +19,7 @@
 	}
 
 void Analytics::log(){
-	if (GetAsyncKeyState(VK_F3) & 0x8000 && !pressed){
+	/*if (GetAsyncKeyState(VK_F3) & 0x8000 && !pressed){
 		pressed = true;
 
 
@@ -42,7 +43,8 @@ void Analytics::log(){
 	else{
 		pressed = false;
 	}
-	
+	*/
 }
 
 #endif
+*/
